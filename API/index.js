@@ -23,3 +23,10 @@ db.on('error', (error) => {
 db.once('connected', () => {
  console.log('Database Connected');
 })
+// O Render injeta a porta na variável process.env.PORT. 
+// Se ela não existir (no seu PC local), ele usa a 3000.
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando e ouvindo na porta ${PORT}`);
+});
